@@ -18,6 +18,7 @@ vim.keymap.set('n', '<space>h', ':nohlsearch<cr>') -- no highlight
 vim.keymap.set('n', '<leader>f', function() vim.lsp.buf.format { async = true } end) -- format text
 vim.keymap.set('n', '<space>Q', ':qa<cr>') -- close nvim
 vim.keymap.set('n', '<leader>vd', function() vim.diagnostic.open_float() end) -- visualize diagnostic
+vim.keymap.set('n', '<space>c', ":bd<CR>", { noremap = true, silent = true}) -- Close buffer
 
 vim.keymap.set("n", "<S-h>", ":bprevious<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<S-l>", ":bnext<CR>", { noremap = true, silent = true })
