@@ -1,4 +1,5 @@
 require('core.plugin_config.color-scheme')
+require('core.plugin_config.window')
 require('core.plugin_config.lualine')
 require('core.plugin_config.nvim-tree')
 require('core.plugin_config.treesitter')
