@@ -2,7 +2,7 @@ require('mason').setup()
 require('mason-lspconfig').setup({
   ensure_installed = { 'lua_ls', 'elixirls', 'tsserver' }
 })
-require'lspconfig'.dartls.setup{}
+require 'lspconfig'.dartls.setup {}
 
 local lsp = vim.lsp
 

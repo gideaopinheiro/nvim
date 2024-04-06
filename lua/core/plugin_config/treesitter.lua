@@ -1,5 +1,5 @@
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = {'c', 'vim', 'vimdoc', 'query', 'lua', 'elixir', 'eex'},
+  ensure_installed = {'c', 'vim', 'vimdoc', 'query', 'lua', 'elixir', 'eex', 'rust', 'toml'},
 
   sync_install = false,
   auto_install = true,

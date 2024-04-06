@@ -12,6 +12,16 @@ end
 local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(function(use)
+  --rust
+  use 'simrat39/rust-tools.nvim'
+  -- flutter dart
+  use 'thosakwe/vim-flutter'
+  use 'natebosch/vim-lsc-dart'
+  use 'natebosch/dartlang-snippets'
+  use 'dart-lang/dart-vim-plugin'
+  -- flutter dart end
+  use 'natebosch/vim-lsc'
+  use 'windwp/nvim-autopairs'
   use 'Mofiqul/dracula.nvim'
   use 'ThePrimeagen/git-worktree.nvim'
   use 'terrortylor/nvim-comment'
@@ -23,8 +33,6 @@ return require('packer').startup(function(use)
   use 'nvim-tree/nvim-web-devicons'
   use 'nvim-lualine/lualine.nvim'
   use 'nvim-treesitter/nvim-treesitter'
-  use 'hrsh7th/nvim-cmp'
-  use 'hrsh7th/cmp-nvim-lsp'
   use 'saadparwaiz1/cmp_luasnip'
   use({
     "iamcco/markdown-preview.nvim",
@@ -48,6 +56,27 @@ return require('packer').startup(function(use)
     'nvim-telescope/telescope.nvim',
     tag = '0.1.4',
     requires = { { 'nvim-lua/plenary.nvim' } }
+  }
+  -- Completion framework
+  use 'hrsh7th/nvim-cmp'
+
+  -- LSP completion source
+  use 'hrsh7th/cmp-nvim-lsp'
+
+  -- Useful completion sources
+  use 'hrsh7th/cmp-nvim-lua'
+  use 'hrsh7th/cmp-nvim-lsp-signature-help'
+  use 'hrsh7th/cmp-vsnip'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/vim-vsnip'
+
+  -- greeting screen
+  use {
+    'goolord/alpha-nvim',
+    config = function()
+      require 'alpha'.setup(require 'alpha.themes.dashboard'.config)
+    end
   }
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

@@ -1,4 +1,7 @@
 require('core.plugin_config.color-scheme')
+require('core.plugin_config.alpha')
+require('core.plugin_config.mason-setup')
+require('core.plugin_config.rust-setup')
 require('core.plugin_config.window')
 require('core.plugin_config.lualine')
 require('core.plugin_config.nvim-tree')
