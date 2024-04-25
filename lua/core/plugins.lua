@@ -12,6 +12,8 @@ end
 local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(function(use)
+  --colorizer
+  use 'norcalli/nvim-colorizer.lua'
   --rust
   use 'simrat39/rust-tools.nvim'
   -- flutter dart
