@@ -2,7 +2,10 @@ require('mason').setup()
 require('mason-lspconfig').setup({
   ensure_installed = { 'lua_ls', 'elixirls', 'tsserver' }
 })
-require 'lspconfig'.dartls.setup {}
+require('lspconfig').dartls.setup({
+  cmd = { 'dart', 'language-server', '--protocol=lsp' },
+  filetypes = { 'dart' },
+})
 
 local lsp = vim.lsp
 

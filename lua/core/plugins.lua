@@ -18,7 +18,6 @@ return require('packer').startup(function(use)
   use 'simrat39/rust-tools.nvim'
   -- flutter dart
   use 'thosakwe/vim-flutter'
-  use 'natebosch/vim-lsc-dart'
   use 'natebosch/dartlang-snippets'
   use 'dart-lang/dart-vim-plugin'
   -- flutter dart end
