@@ -9,5 +9,6 @@ telescope.setup {
     colorscheme = {
       enable_preview = true
     }
-  }
+  },
+  sort_mru = true,
 }
