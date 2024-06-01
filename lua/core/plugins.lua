@@ -12,6 +12,12 @@ end
 local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(function(use)
+  -- Clojure
+  use "Olical/conjure"
+  use "tpope/vim-dispatch"
+  use "radenling/vim-dispatch-neovim"
+  use "clojure-vim/vim-jack-in"
+  use "tpope/vim-sexp-mappings-for-regular-people"
   --colorizer
   use 'norcalli/nvim-colorizer.lua'
   --rust
