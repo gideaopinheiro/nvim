@@ -1,5 +1,5 @@
 require 'nvim-treesitter.configs'.setup {
-  ensure_installed = { 'c', 'vim', 'vimdoc', 'query', 'lua', 'elixir', 'eex', 'rust', 'toml' },
+  ensure_installed = { 'c', 'vim', 'vimdoc', 'query', 'lua', 'elixir', 'eex', 'rust', 'toml', 'clojure', 'commonlisp', 'fennel' },
   rainbow = {
     enable = true,
   },

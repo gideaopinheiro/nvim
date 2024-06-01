@@ -41,3 +41,5 @@ require('lspconfig').tsserver.setup {
 lsp.handlers["textDocument/hover"] = lsp.with(vim.lsp.handlers.hover, {
   border = "rounded"
 })
+
+require('lspconfig').clojure_lsp.setup {}
