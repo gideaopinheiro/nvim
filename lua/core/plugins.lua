@@ -39,6 +39,8 @@ return require('packer').startup(function(use)
   use 'nvim-tree/nvim-tree.lua'
   use 'nvim-tree/nvim-web-devicons'
   use 'nvim-lualine/lualine.nvim'
+  use 'nvim-lua/popup.nvim'
+  use ''
   use 'nvim-treesitter/nvim-treesitter'
   use 'saadparwaiz1/cmp_luasnip'
   use({
@@ -61,6 +63,7 @@ return require('packer').startup(function(use)
   }
   use {
     'nvim-telescope/telescope.nvim',
+    'nvim-telescope/telescope-fzy-native.nvim',
     tag = '0.1.4',
     requires = { { 'nvim-lua/plenary.nvim' } }
   }
