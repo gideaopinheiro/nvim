@@ -29,10 +29,10 @@ vim.keymap.set('n', '<C-k>', ':wincmd k<cr>', { noremap = true, silent = true })
 vim.keymap.set('n', '<C-Right>', ':vertical resize +2<cr>', { noremap = true, silent = true })
 vim.keymap.set('n', '<C-Left>', ':vertical resize -2<cr>', { noremap = true, silent = true })
 
-vim.keymap.set('n', '<leader>sr', ":lua require('telescope').extensions.git_worktree.git_worktrees()<cr>",
-  { silent = true })
-vim.keymap.set('n', '<leader>sR', ":lua require('telescope').extensions.git_worktree.create_git_worktree()<cr>",
-  { silent = true })
+vim.keymap.set('n', '<space>wl', ":lua require('telescope').extensions.git_worktree.git_worktrees()<cr>",
+  { silent = true })                                                               -- switch between worktrees
+vim.keymap.set('n', '<space>wn', ":lua require('telescope').extensions.git_worktree.create_git_worktree()<cr>",
+  { silent = true })                                                               -- create new worktree
 
 vim.keymap.set('n', '<A-k>', ':m .+1<CR>==')                                       -- move linen up
 vim.keymap.set('n', '<A-j>', ':m .-2<CR>==')                                       -- move line down
