@@ -1,6 +1,6 @@
 require('mason').setup()
 require('mason-lspconfig').setup({
-  ensure_installed = { 'lua_ls', 'elixirls', 'tsserver' }
+  ensure_installed = { 'lua_ls', 'elixirls', 'tsserver', 'gopls' }
 })
 require('lspconfig').dartls.setup({
   cmd = { 'dart', 'language-server', '--protocol=lsp' },
@@ -43,3 +43,5 @@ lsp.handlers["textDocument/hover"] = lsp.with(vim.lsp.handlers.hover, {
 })
 
 require('lspconfig').clojure_lsp.setup {}
+
+require('lspconfig').gopls.setup {}
