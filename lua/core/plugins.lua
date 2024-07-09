@@ -81,6 +81,9 @@ return require('packer').startup(function(use)
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/vim-vsnip'
 
+  -- git
+  use 'lewis6991/gitsigns.nvim'
+
   -- Colorscheme
   use { "catppuccin/nvim", as = "catppuccin" }
 
