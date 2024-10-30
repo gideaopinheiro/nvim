@@ -100,6 +100,11 @@ _G.packer_plugins = {
     path = "/home/gideaopinheiro/.local/share/nvim/site/pack/packer/start/catppuccin",
     url = "https://github.com/catppuccin/nvim"
   },
+  ["clangd_extensions.nvim"] = {
+    loaded = true,
+    path = "/home/gideaopinheiro/.local/share/nvim/site/pack/packer/start/clangd_extensions.nvim",
+    url = "https://github.com/p00f/clangd_extensions.nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/gideaopinheiro/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -135,6 +140,16 @@ _G.packer_plugins = {
     path = "/home/gideaopinheiro/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  ["conform.nvim"] = {
+    loaded = true,
+    path = "/home/gideaopinheiro/.local/share/nvim/site/pack/packer/start/conform.nvim",
+    url = "https://github.com/stevearc/conform.nvim"
+  },
+  conjure = {
+    loaded = true,
+    path = "/home/gideaopinheiro/.local/share/nvim/site/pack/packer/start/conjure",
+    url = "https://github.com/Olical/conjure"
+  },
   ["dart-vim-plugin"] = {
     loaded = true,
     path = "/home/gideaopinheiro/.local/share/nvim/site/pack/packer/start/dart-vim-plugin",
@@ -160,6 +175,11 @@ _G.packer_plugins = {
     path = "/home/gideaopinheiro/.local/share/nvim/site/pack/packer/start/git-worktree.nvim",
     url = "https://github.com/ThePrimeagen/git-worktree.nvim"
   },
+  ["gitsigns.nvim"] = {
+    loaded = true,
+    path = "/home/gideaopinheiro/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
+    url = "https://github.com/lewis6991/gitsigns.nvim"
+  },
   ["gruvbox.nvim"] = {
     loaded = true,
     path = "/home/gideaopinheiro/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
@@ -184,6 +204,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/gideaopinheiro/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
+  },
+  ["neomodern.nvim"] = {
+    loaded = true,
+    path = "/home/gideaopinheiro/.local/share/nvim/site/pack/packer/start/neomodern.nvim",
+    url = "https://github.com/cdmill/neomodern.nvim"
   },
   ["nvim-autopairs"] = {
     loaded = true,
@@ -231,20 +256,45 @@ _G.packer_plugins = {
     path = "/home/gideaopinheiro/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
+  ["onedark.nvim"] = {
+    loaded = true,
+    path = "/home/gideaopinheiro/.local/share/nvim/site/pack/packer/start/onedark.nvim",
+    url = "https://github.com/navarasu/onedark.nvim"
+  },
+  ["oxocarbon.nvim"] = {
+    loaded = true,
+    path = "/home/gideaopinheiro/.local/share/nvim/site/pack/packer/start/oxocarbon.nvim",
+    url = "https://github.com/nyoom-engineering/oxocarbon.nvim"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/gideaopinheiro/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
-  ["plenary.nvim"] = {
+  ["papercolor-theme"] = {
     loaded = true,
-    path = "/home/gideaopinheiro/.local/share/nvim/site/pack/packer/start/plenary.nvim",
-    url = "https://github.com/nvim-lua/plenary.nvim"
+    path = "/home/gideaopinheiro/.local/share/nvim/site/pack/packer/start/papercolor-theme",
+    url = "https://github.com/NLKNguyen/papercolor-theme"
+  },
+  ["popup.nvim"] = {
+    loaded = true,
+    path = "/home/gideaopinheiro/.local/share/nvim/site/pack/packer/start/popup.nvim",
+    url = "https://github.com/nvim-lua/popup.nvim"
   },
   ["rust-tools.nvim"] = {
     loaded = true,
     path = "/home/gideaopinheiro/.local/share/nvim/site/pack/packer/start/rust-tools.nvim",
     url = "https://github.com/simrat39/rust-tools.nvim"
+  },
+  ["solarized.nvim"] = {
+    loaded = true,
+    path = "/home/gideaopinheiro/.local/share/nvim/site/pack/packer/start/solarized.nvim",
+    url = "https://github.com/maxmx03/solarized.nvim"
+  },
+  ["telescope-fzy-native.nvim"] = {
+    loaded = true,
+    path = "/home/gideaopinheiro/.local/share/nvim/site/pack/packer/start/telescope-fzy-native.nvim",
+    url = "https://github.com/nvim-telescope/telescope-fzy-native.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
@@ -256,15 +306,35 @@ _G.packer_plugins = {
     path = "/home/gideaopinheiro/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
     url = "https://github.com/akinsho/toggleterm.nvim"
   },
+  ["vim-dispatch"] = {
+    loaded = true,
+    path = "/home/gideaopinheiro/.local/share/nvim/site/pack/packer/start/vim-dispatch",
+    url = "https://github.com/tpope/vim-dispatch"
+  },
+  ["vim-dispatch-neovim"] = {
+    loaded = true,
+    path = "/home/gideaopinheiro/.local/share/nvim/site/pack/packer/start/vim-dispatch-neovim",
+    url = "https://github.com/radenling/vim-dispatch-neovim"
+  },
   ["vim-flutter"] = {
     loaded = true,
     path = "/home/gideaopinheiro/.local/share/nvim/site/pack/packer/start/vim-flutter",
     url = "https://github.com/thosakwe/vim-flutter"
   },
+  ["vim-jack-in"] = {
+    loaded = true,
+    path = "/home/gideaopinheiro/.local/share/nvim/site/pack/packer/start/vim-jack-in",
+    url = "https://github.com/clojure-vim/vim-jack-in"
+  },
   ["vim-lsc"] = {
     loaded = true,
     path = "/home/gideaopinheiro/.local/share/nvim/site/pack/packer/start/vim-lsc",
     url = "https://github.com/natebosch/vim-lsc"
+  },
+  ["vim-sexp-mappings-for-regular-people"] = {
+    loaded = true,
+    path = "/home/gideaopinheiro/.local/share/nvim/site/pack/packer/start/vim-sexp-mappings-for-regular-people",
+    url = "https://github.com/tpope/vim-sexp-mappings-for-regular-people"
   },
   ["vim-vsnip"] = {
     loaded = true,

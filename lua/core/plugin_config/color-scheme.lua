@@ -1,115 +1,64 @@
--- vim.cmd [[ colorscheme catppuccin ]]
 vim.o.termguicolors = true
-require("catppuccin").setup({
-  flavour = "auto", -- latte, frappe, macchiato, mocha
-  background = {    -- :h background
-    light = "latte",
-    dark = "mocha",
-  },
-  transparent_background = false, -- disables setting the background color.
-  show_end_of_buffer = false,     -- shows the '~' characters after the end of buffers
-  term_colors = false,            -- sets terminal colors (e.g. `g:terminal_color_0`)
-  dim_inactive = {
-    enabled = false,              -- dims the background color of inactive window
-    shade = "dark",
-    percentage = 0.15,            -- percentage of the shade to apply to the inactive window
-  },
-  no_italic = false,              -- Force no italic
-  no_bold = false,                -- Force no bold
-  no_underline = false,           -- Force no underline
-  styles = {                      -- Handles the styles of general hi groups (see `:h highlight-args`):
-    comments = { "italic" },      -- Change the style of comments
-    conditionals = { "italic" },
-    loops = {},
-    functions = {},
-    keywords = {},
-    strings = {},
-    variables = {},
-    numbers = {},
-    booleans = {},
-    properties = {},
-    types = {},
-    operators = {},
-    -- miscs = {}, -- Uncomment to turn off hard-coded styles
-  },
-  color_overrides = {
-    mocha = {
-      -- Dark
-      rosewater = "#F5B8AB",
-      flamingo = "#F29D9D",
-      pink = "#AD6FF7",
-      mauve = "#FF8F40",
-      red = "#E66767",
-      maroon = "#EB788B",
-      peach = "#FAB770",
-      yellow = "#FACA64",
-      green = "#70CF67",
-      teal = "#4CD4BD",
-      sky = "#61BDFF",
-      sapphire = "#4BA8FA",
-      blue = "#00BFFF",
-      lavender = "#00BBCC",
-      text = "#C1C9E6",
-      subtext1 = "#A3AAC2",
-      subtext0 = "#8E94AB",
-      overlay2 = "#7D8296",
-      overlay1 = "#676B80",
-      overlay0 = "#464957",
-      surface2 = "#3A3D4A",
-      surface1 = "#2F313D",
-      surface0 = "#1D1E29",
-      base = "#0b0b12",
-      mantle = "#11111a",
-      crust = "#191926",
-    }
-    -- not so dark
-    -- mocha = {
-    --   rosewater = "#ffc9c9",
-    --   flamingo = "#ff9f9a",
-    --   pink = "#ffa9c9",
-    --   mauve = "#df95cf",
-    --   lavender = "#a990c9",
-    --   red = "#ff6960",
-    --   maroon = "#f98080",
-    --   peach = "#f9905f",
-    --   yellow = "#f9bd69",
-    --   green = "#b0d080",
-    --   teal = "#a0dfa0",
-    --   sky = "#a0d0c0",
-    --   sapphire = "#95b9d0",
-    --   blue = "#89a0e0",
-    --   text = "#e0d0b0",
-    --   subtext1 = "#d5c4a1",
-    --   subtext0 = "#bdae93",
-    --   overlay2 = "#928374",
-    --   overlay1 = "#7c6f64",
-    --   overlay0 = "#665c54",
-    --   surface2 = "#504844",
-    --   surface1 = "#3a3634",
-    --   surface0 = "#252525",
-    --   base = "#151515",
-    --   mantle = "#0e0e0e",
-    --   crust = "#080808",
-    --   -- base = "#000000",
-    --   -- mantle = "#000000",
-    --   -- crust = "#000000",
-    -- },
-  },
-  custom_highlights = {},
-  default_integrations = true,
-  integrations = {
-    cmp = true,
-    gitsigns = true,
-    nvimtree = true,
-    treesitter = true,
-    notify = false,
-    mini = {
-      enabled = true,
-      indentscope_color = "",
-    },
-    -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
-  },
-})
 
 -- setup must be called before loading
-vim.cmd.colorscheme "catppuccin"
+-- vim.o.background = "light"
+-- vim.cmd.colorscheme "neomodern"
+-- vim.cmd.colorscheme "dracula"
+
+-- DRACULA CONFIG
+local dracula = require("dracula")
+dracula.setup({
+  -- customize dracula color palette
+  colors = {
+    bg = "#282A36",
+    fg = "#F8F8F2",
+    selection = "#44475A",
+    -- selection = "#84475A",
+    comment = "#6272A4",
+    red = "#FF5555",
+    orange = "#FFB86C",
+    yellow = "#F1FA8C",
+    green = "#50fa7b",
+    purple = "#BD93F9",
+    cyan = "#8BE9FD",
+    pink = "#FF79C6",
+    bright_red = "#FF6E6E",
+    bright_green = "#69FF94",
+    bright_yellow = "#FFFFA5",
+    -- bright_blue = "#D6ACFF",
+    bright_blue = "#2655c5",
+    bright_magenta = "#FF92DF",
+    bright_cyan = "#A4FFFF",
+    bright_white = "#FFFFFF",
+    menu = "#21222C",
+    visual = "#3E4452",
+    gutter_fg = "#4B5263",
+    nontext = "#3B4048",
+    white = "#ABB2BF",
+    black = "#191A21",
+  },
+  -- show the '~' characters after the end of buffers
+  show_end_of_buffer = true, -- default false
+  -- use transparent background
+  transparent_bg = true, -- default false
+  -- set custom lualine background color
+  lualine_bg_color = "#44475a", -- default nil
+  -- set italic comment
+  italic_comment = true, -- default false
+  -- overrides the default highlights with table see `:h synIDattr`
+  overrides = {},
+  -- You can use overrides as table like this
+  -- overrides = {
+  --   NonText = { fg = "white" }, -- set NonText fg to white
+  --   NvimTreeIndentMarker = { link = "NonText" }, -- link to NonText highlight
+  --   Nothing = {} -- clear highlight of Nothing
+  -- },
+  -- Or you can also use it like a function to get color from theme
+  -- overrides = function (colors)
+  --   return {
+  --     NonText = { fg = colors.white }, -- set NonText fg to white of theme
+  --   }
+  -- end,
+})
+
+vim.cmd.colorscheme "dracula"

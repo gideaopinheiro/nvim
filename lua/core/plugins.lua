@@ -12,6 +12,8 @@ end
 local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(function(use)
+  -- Clang
+  use "p00f/clangd_extensions.nvim"
   -- Clojure
   use "Olical/conjure"
   use "tpope/vim-dispatch"
@@ -29,13 +31,11 @@ return require('packer').startup(function(use)
   -- flutter dart end
   use 'natebosch/vim-lsc'
   use 'windwp/nvim-autopairs'
-  use 'Mofiqul/dracula.nvim'
   use 'ThePrimeagen/git-worktree.nvim'
   use 'terrortylor/nvim-comment'
   use 'm4xshen/autoclose.nvim'
   use 'akinsho/toggleterm.nvim'
   use 'wbthomason/packer.nvim'
-  use 'ellisonleao/gruvbox.nvim'
   use 'nvim-tree/nvim-tree.lua'
   use 'nvim-tree/nvim-web-devicons'
   use 'nvim-lualine/lualine.nvim'
@@ -86,7 +86,14 @@ return require('packer').startup(function(use)
 
   -- Colorscheme
   use { "catppuccin/nvim", as = "catppuccin" }
-
+  use 'ellisonleao/gruvbox.nvim'
+  use 'Mofiqul/dracula.nvim'
+  use { 'nyoom-engineering/oxocarbon.nvim' }
+  use { "cdmill/neomodern.nvim" }
+  use 'navarasu/onedark.nvim'
+  use 'NLKNguyen/papercolor-theme'
+  use 'maxmx03/solarized.nvim'
+  use 'stevearc/conform.nvim'
   -- greeting screen
   use {
     'goolord/alpha-nvim',
