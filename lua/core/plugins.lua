@@ -16,6 +16,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
+  "folke/which-key.nvim",
   'nvim-lua/plenary.nvim',
   -- Clang
   "p00f/clangd_extensions.nvim",
@@ -58,7 +59,11 @@ local plugins = {
     run = "make install_jsregexp"
   },
   'rafamadriz/friendly-snippets',
-  { 'akinsho/bufferline.nvim', tag = "*",        dependencies = 'nvim-tree/nvim-web-devicons' },
+  {
+    'akinsho/bufferline.nvim',
+    version = "*",
+    dependencies = 'nvim-tree/nvim-web-devicons'
+  },
   {
     'williamboman/mason.nvim',
     'williamboman/mason-lspconfig.nvim',
@@ -88,7 +93,7 @@ local plugins = {
   'lewis6991/gitsigns.nvim',
 
   -- Colorscheme
-  { "catppuccin/nvim",         as = "catppuccin" },
+  { "catppuccin/nvim",                 as = "catppuccin" },
   'ellisonleao/gruvbox.nvim',
   'Mofiqul/dracula.nvim',
   { 'nyoom-engineering/oxocarbon.nvim' },
