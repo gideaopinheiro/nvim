@@ -1,109 +1,112 @@
-local ensure_packer = function()
-  local fn = vim.fn
-  local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
-  if fn.empty(fn.glob(install_path)) > 0 then
-    fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
-    vim.cmd [[packadd packer.nvim]]
-    return true
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+  local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+  local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+  if vim.v.shell_error ~= 0 then
+    vim.api.nvim_echo({
+      { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
+      { out,                            "WarningMsg" },
+      { "\nPress any key to exit..." },
+    }, true, {})
+    vim.fn.getchar()
+    os.exit(1)
   end
-  return false
 end
 
-local packer_bootstrap = ensure_packer()
+vim.opt.rtp:prepend(lazypath)
 
-return require('packer').startup(function(use)
+local plugins = {
+  'nvim-lua/plenary.nvim',
   -- Clang
-  use "p00f/clangd_extensions.nvim"
+  "p00f/clangd_extensions.nvim",
   -- Clojure
-  use "Olical/conjure"
-  use "tpope/vim-dispatch"
-  use "radenling/vim-dispatch-neovim"
-  use "clojure-vim/vim-jack-in"
-  use "tpope/vim-sexp-mappings-for-regular-people"
+  "Olical/conjure",
+  "tpope/vim-dispatch",
+  "radenling/vim-dispatch-neovim",
+  "clojure-vim/vim-jack-in",
+  "tpope/vim-sexp-mappings-for-regular-people",
   --colorizer
-  use 'norcalli/nvim-colorizer.lua'
+  'norcalli/nvim-colorizer.lua',
   --rust
-  use 'simrat39/rust-tools.nvim'
+  'simrat39/rust-tools.nvim',
   -- flutter dart
-  use 'thosakwe/vim-flutter'
-  use 'natebosch/dartlang-snippets'
-  use 'dart-lang/dart-vim-plugin'
+  'thosakwe/vim-flutter',
+  'natebosch/dartlang-snippets',
+  'dart-lang/dart-vim-plugin',
   -- flutter dart end
-  use 'natebosch/vim-lsc'
-  use 'windwp/nvim-autopairs'
-  use 'ThePrimeagen/git-worktree.nvim'
-  use 'terrortylor/nvim-comment'
-  use 'm4xshen/autoclose.nvim'
-  use 'akinsho/toggleterm.nvim'
-  use 'wbthomason/packer.nvim'
-  use 'nvim-tree/nvim-tree.lua'
-  use 'nvim-tree/nvim-web-devicons'
-  use 'nvim-lualine/lualine.nvim'
-  use 'nvim-lua/popup.nvim'
-  use ''
-  use 'nvim-treesitter/nvim-treesitter'
-  use 'saadparwaiz1/cmp_luasnip'
-  use({
+  'natebosch/vim-lsc',
+  'windwp/nvim-autopairs',
+  'ThePrimeagen/git-worktree.nvim',
+  'terrortylor/nvim-comment',
+  'm4xshen/autoclose.nvim',
+  'akinsho/toggleterm.nvim',
+  'nvim-tree/nvim-tree.lua',
+  'nvim-tree/nvim-web-devicons',
+  'nvim-lualine/lualine.nvim',
+  'nvim-lua/popup.nvim',
+  'nvim-treesitter/nvim-treesitter',
+  'saadparwaiz1/cmp_luasnip',
+  {
     "iamcco/markdown-preview.nvim",
     run = function() vim.fn["mkdp#util#install"]() end,
-  })
-  use({
+  },
+  {
     "L3MON4D3/LuaSnip",
     -- follow latest release.
     tag = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
     -- install jsregexp (optional!:).
     run = "make install_jsregexp"
-  })
-  use 'rafamadriz/friendly-snippets'
-  use { 'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons' }
-  use {
+  },
+  'rafamadriz/friendly-snippets',
+  { 'akinsho/bufferline.nvim', tag = "*",        dependencies = 'nvim-tree/nvim-web-devicons' },
+  {
     'williamboman/mason.nvim',
     'williamboman/mason-lspconfig.nvim',
     'neovim/nvim-lspconfig',
-  }
-  use {
+  },
+  {
     'nvim-telescope/telescope.nvim',
     'nvim-telescope/telescope-fzy-native.nvim',
     tag = '0.1.4',
-    requires = { { 'nvim-lua/plenary.nvim' } }
-  }
+    dependencies = { { 'nvim-lua/plenary.nvim' } }
+  },
   -- Completion framework
-  use 'hrsh7th/nvim-cmp'
+  'hrsh7th/nvim-cmp',
 
   -- LSP completion source
-  use 'hrsh7th/cmp-nvim-lsp'
+  'hrsh7th/cmp-nvim-lsp',
 
   -- Useful completion sources
-  use 'hrsh7th/cmp-nvim-lua'
-  use 'hrsh7th/cmp-nvim-lsp-signature-help'
-  use 'hrsh7th/cmp-vsnip'
-  use 'hrsh7th/cmp-path'
-  use 'hrsh7th/cmp-buffer'
-  use 'hrsh7th/vim-vsnip'
+  'hrsh7th/cmp-nvim-lua',
+  'hrsh7th/cmp-nvim-lsp-signature-help',
+  'hrsh7th/cmp-vsnip',
+  'hrsh7th/cmp-path',
+  'hrsh7th/cmp-buffer',
+  'hrsh7th/vim-vsnip',
 
   -- git
-  use 'lewis6991/gitsigns.nvim'
+  'lewis6991/gitsigns.nvim',
 
   -- Colorscheme
-  use { "catppuccin/nvim", as = "catppuccin" }
-  use 'ellisonleao/gruvbox.nvim'
-  use 'Mofiqul/dracula.nvim'
-  use { 'nyoom-engineering/oxocarbon.nvim' }
-  use { "cdmill/neomodern.nvim" }
-  use 'navarasu/onedark.nvim'
-  use 'NLKNguyen/papercolor-theme'
-  use 'maxmx03/solarized.nvim'
-  use 'stevearc/conform.nvim'
+  { "catppuccin/nvim",         as = "catppuccin" },
+  'ellisonleao/gruvbox.nvim',
+  'Mofiqul/dracula.nvim',
+  { 'nyoom-engineering/oxocarbon.nvim' },
+  { "cdmill/neomodern.nvim" },
+  'navarasu/onedark.nvim',
+  'NLKNguyen/papercolor-theme',
+  'maxmx03/solarized.nvim',
+  'stevearc/conform.nvim',
   -- greeting screen
-  use {
+  {
     'goolord/alpha-nvim',
     config = function()
       require 'alpha'.setup(require 'alpha.themes.dashboard'.config)
     end
-  }
+  },
 
   -- surround plugin
-  use({
+  {
     "kylechui/nvim-surround",
     tag = "*", -- Use for stability; omit to use `main` branch for the latest features
     config = function()
@@ -111,10 +114,7 @@ return require('packer').startup(function(use)
         -- Configuration here, or leave empty to use defaults
       })
     end
-  })
-  -- Automatically set up your configuration after cloning packer.nvim
-  -- Put this at the end after all plugins
-  if packer_bootstrap then
-    require('packer').sync()
-  end
-end)
+  },
+}
+
+require('lazy').setup(plugins, opts)
