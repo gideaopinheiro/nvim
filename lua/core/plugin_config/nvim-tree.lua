@@ -3,4 +3,4 @@ vim.g.loaded_netrwPlugin = 1
 
 require('nvim-tree').setup()
 
-vim.keymap.set('n', '<space>e', ':NvimTreeFindFileToggle<cr>')
+vim.keymap.set('n', '<space>e', ':NvimTreeFindFileToggle<cr>', { desc = "Toggle files explorer" })
